@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
+        "laravel/telescope": "^5.15",
         "laravel/tinker": "^2.10.1",
         "nwidart/laravel-modules": "^12.0"
     },
@@ -43,6 +44,12 @@
             "@php artisan ide-helper:models -R --dir=app --dir=Modules",
             "php artisan ide-helper:generate",
             "php artisan ide-helper:meta",
+            "@composer dump-autoload -o"
+        ],
+        "refresh": [
+            "@php artisan config:clear",
+            "@php artisan route:clear",
+            "@php artisan optimize:clear",
             "@composer dump-autoload -o"
         ],
         "setup": [
